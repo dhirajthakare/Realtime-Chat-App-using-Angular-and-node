@@ -1,0 +1,45 @@
+<div class="row">
+  <button routerLink="/groupchat" class="btn btn-primary col-md-2">
+    Redirect To Group Chat
+  </button>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-3 my-5 card">
+    <div class="m-3 card-body">
+      <p>chat-box works!</p>
+
+      <div class="row">
+        <div class="col-md-8">
+          <input
+            #inputBox
+            type="text"
+            class="form-control"
+            name="sendContent"
+            id="sendContent"
+          />
+        </div>
+        <div class="col-md-4">
+          <button
+            (click)="sendmessage(inputBox)"
+            class="form-control btn btn-primary"
+          >
+            Send Data
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h6 class="m-2">Chat box</h6>
+
+        <ul
+          *ngFor="let item of messageArray; let indexOfelement = index"
+          id="messages"
+        >
+          <li [ngClass]="indexOfelement % 2 == 0 ? 'liBgChange' : ''">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
