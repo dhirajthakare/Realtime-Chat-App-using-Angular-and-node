@@ -1,9 +1,7 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require("socket.io")(http, {
-  cors: {
-    origins: ["https://angular-chat-app-og69.vercel.app","http://localhost:4200"],
-  },
+  cors: {},
 });
 const port = process.env.PORT || 5000;
 
