@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 export class SocketIoServiceService {
   constructor() {}
 
-  private socket = io('https://angular-chat-app-sigma.vercel.app/');
+  private socket = io('https://angular-chat-backend.onrender.com/');
 
   sedMsg(value: any) {
     this.socket.emit('chat message', value);
