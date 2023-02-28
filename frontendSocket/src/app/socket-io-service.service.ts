@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 export class SocketIoServiceService {
   constructor() {}
 
-  private socket = io('https://angular-chat-backend.onrender.com/');
+  private socket = io('https://nodejs-backend-for-realtime-chat.onrender.com/');
 
   sedMsg(value: any) {
     this.socket.emit('chat message', value);
