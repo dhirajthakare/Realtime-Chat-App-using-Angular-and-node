@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 export class SocketIoServiceService {
   constructor() {}
 
-  private socket = io('https://nodejs-backend-for-realtime-chat.onrender.com/');
+  private socket = io(window.location.hostname != 'localhost'?"https://nodejs-backend-for-realtime-chat.onrender.com/":'http://'+window.location.hostname+':5000');
 
   sedMsg(value: any) {
     this.socket.emit('chat message', value);

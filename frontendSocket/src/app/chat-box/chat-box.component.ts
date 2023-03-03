@@ -23,5 +23,6 @@ export class ChatBoxComponent implements OnInit {
 
   sendmessage(data: any) {
     this.socket.sedMsg(data.value);
+    data.value = '';
   }
 }
